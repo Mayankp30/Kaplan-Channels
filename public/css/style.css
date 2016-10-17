@@ -1,0 +1,10 @@
+
+div .title {
+    position: absolute;
+    top: 64%;
+    left: 44%;
+    width: 100%;
+    color: rgb(173,204,48);
+    font-size: 22px;
+    font-weight: bold;
+}
