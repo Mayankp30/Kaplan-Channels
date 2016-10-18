@@ -1,7 +1,6 @@
 var express = require('express');
 var fs = require('fs');
 var app = express();
-
 var router = express.Router();
 var path = __dirname + '/public/';
 var file = __dirname + '/channel.json';
@@ -34,6 +33,12 @@ fs.readFile(file, 'utf8', function (err, data) {
   //console.dir(data);
 });
 })
+
+/**
+ * Start Express server.
+ */
+
 app.listen(5000,function(){
   console.log("Express server listening to port 5000");
+  console.log("server started **");
 });

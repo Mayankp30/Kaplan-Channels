@@ -12,6 +12,7 @@ angular.module('kaplanApp', ['angular.filter'])
 		    var newDate = new Date(dateTime);
 		    e.date = newDate.toLocaleDateString();
 		    console.log(e.date);
+		    console.log(typeof(e.date));
 		    return e;
 		};
 
@@ -21,17 +22,11 @@ angular.module('kaplanApp', ['angular.filter'])
 	  			$scope.objectList = data.sort(function(a,b){
 				  // Turn your strings into dates, and then subtract them
 				  // to get a value that is either negative, positive, or zero.
-				  return new Date(a.time.substring(0,10) + "T" + b.time.substring(11,20)) - new Date(b.time.substring(0,10) + "T" + a.time.substring(11,20));
+				  return new Date(a.time.substring(0,10) + "T" + b.time.substring(11,20)) - new Date(b.time.substring(0,10) + "T" + b.time.substring(11,20));
 				});
-	  			console.log("hello");
-	  			//console.log(data);
-	  			
 	  		})
 	  		.error(function(data) {
 	  			console.log(data);
 	  		});
 	  	}
-
-	  	
-
 	}]);

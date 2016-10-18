@@ -4,10 +4,13 @@
 <html ng-app="kaplanApp">
 <head>
 	<title>Kaplan App</title>
+	
 	<!-- SCROLLS -->
 
+	<link rel="stylesheet" type="text/css" href="../css/style.css"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
 	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
@@ -29,26 +32,26 @@
 	        <div ng-repeat="(key, value) in objectList
                 | map: toLocaleDate
               	| groupBy: 'date'">
-             <div><strong> {{ key }}</strong></div>
+             <div class="cardDate"><strong> {{ key }}</strong></div>
 			  <div class="card-panel grey lighten-5 z-depth-1" ng-repeat="v in value">
 			  	<div class="row valign-wrapper">
 		            <div class="col s5">
 		              <img src="{{v.subjectPhotoUrl}}" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
 		              <span class="black-text">
-		              	<b>{{v.title}}</b>
-		              	<br>
-		                {{v.description}}
+		              	<b><span class="title">{{v.title}}</span></b>
+		              	<br><br>
+		                <span class="description">{{v.description}}</span>
 		              </span>
 		            </div>
 		            <div class="col s3">
 		              <img src="{{v.instructorPhotoUrl}}" alt="" class="circle responsive-img">
 		              <span class="black-text">
-		                {{v.instructorName}}
+		                <span class="instName">{{v.instructorName}}</span>
 		              </span>
 		            </div>
 		            <div class="col s3">
 		              <span class="black-text">
-		                {{v.time}}
+		                <span class="time">{{v.time}}</span>
 		              </span>
 		            </div>
 		          </div>
